@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: lightgray;
+}
+
+.contribution-wrapper {
+    text-align: center;
+    font-size: 1.5rem;
+
+    .contribution-count {
+        font-size: 5rem;
+        display: block;
+    }
+}

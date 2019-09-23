@@ -1,9 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: #ffffff;
+    background-color: #f7f7f7;
 }
 
+.main-content {
+    background-color: #ffffff;
+    border-radius: 4px;
+}
 .contribution-wrapper {
     text-align: center;
     font-size: 1.5rem;

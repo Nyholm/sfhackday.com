@@ -28,7 +28,7 @@ class ContributionService
     {
         return $this->cache->get('contributions', function (ItemInterface $item) {
             /** @var ResponseInterface $response */
-            $response = $this->httpClient->request('GET', 'https://api.github.com/search/issues?q=%23SyfmonyHackday+created:>'.$this->fromDate);
+            $response = $this->httpClient->request('GET', 'https://api.github.com/search/issues?q=%23SymfonyHackday+created:>'.$this->fromDate);
             $content = $response->toArray();
 
             $item->expiresAfter(60);

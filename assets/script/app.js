@@ -5,7 +5,4 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
-require('bootstrap');
 require('../style/app.scss');
-
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

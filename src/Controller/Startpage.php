@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Service\ContributionService;
-use App\Service\TodoService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class Startpage extends AbstractController
@@ -16,7 +15,6 @@ class Startpage extends AbstractController
     {
         $this->contributionService = $contributionService;
     }
-
 
     public function index()
     {

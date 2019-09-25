@@ -1,24 +1,9 @@
 {
-    "firebase/php-jwt": {
-        "version": "v5.0.0"
+    "aws/aws-sdk-php": {
+        "version": "3.112.6"
     },
-    "google/apiclient": {
-        "version": "2.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "2.0",
-            "ref": "49c5d7a66d863d28513979bf0666dc77599100c0"
-        },
-        "files": [
-            "config/packages/google_apiclient.yaml"
-        ]
-    },
-    "google/apiclient-services": {
-        "version": "v0.115"
-    },
-    "google/auth": {
-        "version": "v1.5.2"
+    "bref/bref": {
+        "version": "0.5.6"
     },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
@@ -29,11 +14,17 @@
     "guzzlehttp/psr7": {
         "version": "1.6.1"
     },
-    "monolog/monolog": {
-        "version": "2.0.0"
+    "hollodotme/fast-cgi-client": {
+        "version": "v2.7.2"
     },
-    "phpseclib/phpseclib": {
-        "version": "2.0.23"
+    "mnapoli/silly": {
+        "version": "1.7.1"
+    },
+    "mtdowling/jmespath.php": {
+        "version": "2.4.0"
+    },
+    "php-di/invoker": {
+        "version": "2.0.0"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -153,6 +144,9 @@
     },
     "symfony/polyfill-php73": {
         "version": "v1.12.0"
+    },
+    "symfony/process": {
+        "version": "v4.3.4"
     },
     "symfony/profiler-pack": {
         "version": "v1.0.4"

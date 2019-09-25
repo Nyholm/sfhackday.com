@@ -1,0 +1,36 @@
+service: sfhackday
+
+provider:
+  name: aws
+  region: eu-central-1
+  runtime: provided
+  stage: Prod
+  memorySize: 1792
+  deploymentBucket:
+    name: nyholm-lambda-applications
+  deploymentPrefix: com.sfhackday/${sls:instanceId}
+  environment:
+    # Symfony environment variables
+    APP_ENV: prod
+    APP_SECRET: ${ssm:/com.sfhackday/secret}
+
+plugins:
+  - ./vendor/bref/bref
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: sfhackday.com
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+
+functions:
+  website:
+    handler: public/index.php
+    timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
+    layers:
+      - ${bref:layer.php-73-fpm}
+    events:
+      -   http: 'GET /'
+#      -   http: 'ANY /{proxy+}'

@@ -50,4 +50,24 @@ class Kernel extends BaseKernel
         $routes->import($confDir.'/{routes}/*'.self::CONFIG_EXTS, '/', 'glob');
         $routes->import($confDir.'/{routes}'.self::CONFIG_EXTS, '/', 'glob');
     }
+
+    public function getLogDir()
+    {
+        // When on the lambda only /tmp is writeable
+        if (getenv('LAMBDA_TASK_ROOT') !== false) {
+            return '/tmp/log/';
+        }
+
+        return parent::getLogDir();
+    }
+
+    public function getCacheDir()
+    {
+        // When on the lambda only /tmp is writeable
+        if (getenv('LAMBDA_TASK_ROOT') !== false) {
+            return '/tmp/cache/'.$this->environment;
+        }
+
+        return parent::getCacheDir();
+    }
 }

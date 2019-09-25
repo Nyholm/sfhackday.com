@@ -1,89 +1,80 @@
 {% extends "base.html.twig" %}
 
+{% block hero %}
+    <div class="columns">
+        <div class="column is-8 has-text-centered">
+            <h1 class="title">
+                Symfony Hackday
+            </h1>
+        </div>
+        <div class="column is-4 has-text-centered">
+            <h1 class="title">{{ contributions }}</h1>
+            <h2 class="subtitle">Contributions</h2>
+        </div>
+    </div>
+
+{% endblock %}
+
 {% block body %}
-<div class="header">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-md-7 col-lg-8 col-xl-8 mt-3 mt-md-0 text-center text-md-left">
+            <div class="columns">
+                <div class="column box is-8 is-offset-2 has-background-white">
+                    <h2  class="subtitle is-size-2">Symfony Hackday</h2>
+                    <p class="is-size-5">
+                        The Symfony hackday is a day where we gather in the same room, meet each other & contribute to open source code.
+                        Everybody is welcome: it does not matter if you've never contributed before or if you consider yourself
+                        an expert in open source software.
+                    </p>
+                    <br />
+                    <p class="is-size-5">
+                        The next Symfony hackday is <b>Saturday 2019-11-23</b> in Amsterdam after <a href="https://amsterdam2019.symfony.com">Symfony Con</a>.
+                    </p>
 
-            </div>
+                    <hr />
 
-            <div class="col-12 col-md-5 col-lg-4 col-xl-4">
-                <div class="my-3 my-md-0 text-center">
-                    <div class="contribution-wrapper d-inline-block px-4 py-3">
-                        We have made <span class="contribution-count">{{ contributions }}</span> contributions today
-                    </div>
+                    <h2 class="subtitle is-size-2">What should we do?</h2>
+                    <p class="is-size-4">
+                        The short anwser is: Whatever you want.
+                    </p>
+                    <br />
+                    <p class="is-size-5">
+                        If you dont have any ideas yourself, there are plenty of issues you can pick from. We've composed a long list
+                        in <b><a href="javascript:void(0)">this spreadsheet</a></b>. When you start with a task,
+                        please mark it as claimed so no two people are working on the same thing without knowing.
+                    </p>
+                    <br />
+                    <p class="is-size-5">
+                        The main focus will be to make libraries ready for Symfony 5.0. Most of the time this means just updating
+                        that library's <i>composer.json</i> file. But you need to carefully read the changelog of the symfony
+                        components used to make sure we are not breaking anything. (Or, ignore the changelog and hope the
+                        library/bundle is tested - watch to see if the tests pass in your pull request!).
+                    </p>
+                    <br />
+                    <p class="is-size-5">
+                        There will also be "theme tables" where people get together to work on a specific component or library.
+                        There will be a Messenger table, Webpack, PHPUnit, Doctrine, API Platform and more.
+                    </p>
+
+                    <hr />
+
+                    <h2 class="subtitle is-size-2">Make it count</h2>
+                    <p class="is-size-5">
+                        Whenever you make a PR or Issue on Github, please add <b>#SymfonyHackday</b> in the description. Then we
+                        can count the contributions!
+                    </p>
+
+                    <hr />
+
+                    <h2 class="subtitle is-size-2">Schedule</h2>
+                    <p class="is-size-5">
+                        We open the doors around 09.30. Bring your computer to start coding, helping others or discussing
+                        issues. At <b>10.00</b> we will start a workshop titled "How do start contributing to open source".
+                    </p>
+                    <br />
+                    <p class="is-size-5">
+                        We will continue contributing until around 17.00. Nobody is expected to participate for the
+                        full day - you can come and go as you please!
+                    </p>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-
-    <div class="row mt-3">
-        <div class="main-content col-12 col-md-7 col-lg-8 col-xl-8 py-3 px-4">
-            <h1>Symfony Hackday</h1>
-            <p>
-                The Symfony hackday is a day where we gather in the same room, meet each other & contribute to open source code.
-                Everybody is welcome: it does not matter if you've never contributed before or if you consider yourself
-                an expert in open source software.
-            </p>
-
-            <p>
-                The next Symfony hackday is <b>Saturday 2019-11-23</b> in Amsterdam after <a href="https://amsterdam2019.symfony.com">Symfony Con</a>.
-            </p>
-
-            <h2>What should we do?</h2>
-            <p>
-                The short anwser is: Whatever you want.
-            </p>
-            <p>
-                If you dont have any ideas yourself, there are plenty of issues you can pick from. We've composed a long list
-                in <b><a href="https://docs.google.com/spreadsheets/d/18H-6gY88M0G-kaKTEk_ZyPeYqvYr63gzBbopHyOppK0/edit?usp=sharing" target="_blank">this spreadsheet</a></b>. When you start with a task,
-                please mark it as claimed so no two people are working on the same thing without knowing.
-            </p>
-
-            <p>
-                The main focus will be to make libraries ready for Symfony 5.0. Most of the time this means just updating
-                that library's <i>composer.json</i> file. But you need to carefully read the changelog of the symfony
-                components used to make sure we are not breaking anything. (Or, ignore the changelog and hope the
-                library/bundle is tested - watch to see if the tests pass in your pull request!).
-            </p>
-
-            <p>
-                There will also be "theme tables" where people get together to work on a specific component or library.
-                There will be a Messenger table, Webpack, PHPUnit, Doctrine, API Platform and more.
-            </p>
-
-
-            <h2>Make it count</h2>
-            <p>
-                Whenever you make a PR or Issue on Github, please add <b>#SymfonyHackday</b> in the description. Then we
-                can count the contributions!
-            </p>
-
-
-            <h2>Schedule</h2>
-
-            <p>
-                We open the doors around 09.30. Bring your computer to start coding, helping others or discussing
-                issues. At <b>10.00</b> we will start a workshop titled "How do start contributing to open source".
-            </p>
-            <p>
-                We will continue contributing until around 17.00. Nobody is expected to participate for the
-                full day - you can come and go as you please!
-            </p>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-12 text-center">
-            <p>
-                Found a typo or do you want to make this page more beautiful? Make a PR on
-                <a href="https://github.com/Nyholm/sfhackday.com">Github</a>.
-            </p>
-        </div>
-    </div>
-</div>
-
 
 {% endblock %}

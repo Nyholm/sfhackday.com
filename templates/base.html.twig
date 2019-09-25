@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Symfony Hackday">
     <title>Symfony Hackday</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
     {{ includeAsset('app.css') }}
     </style>
 </head>
 <body>
-{% block body %}{% endblock %}
 
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            {% block hero %}{% endblock %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p class="has-text-black">
+            Found a typo or do you want to make this page more beautiful? Make a PR on
+            <a href="https://github.com/Nyholm/sfhackday.com">GitHub</a>.
+        </p>
+    </div>
+</footer>
 <script type="text/javascript">
   {{ includeAsset('app.js') }}
 </script>

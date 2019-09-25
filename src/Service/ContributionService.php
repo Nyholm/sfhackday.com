@@ -14,19 +14,21 @@ class ContributionService
     private $httpClient;
     private $cache;
 
-    public function __construct(HttpClientInterface $httpClient, CacheInterface $cache)
+    /** @var string YYYY-mm-dd */
+    private $fromDate;
+
+    public function __construct(HttpClientInterface $httpClient, CacheInterface $cache, string $fromDate)
     {
         $this->httpClient = $httpClient;
         $this->cache = $cache;
+        $this->fromDate = $fromDate;
     }
 
     public function getTotalNumberOfContributions(): int
     {
-        $httpClient = $this->httpClient;
-
-        return $this->cache->get('contributions', function (ItemInterface $item) use ($httpClient) {
+        return $this->cache->get('contributions', function (ItemInterface $item) {
             /** @var ResponseInterface $response */
-            $response = $httpClient->request('GET', 'https://api.github.com/search/issues?q=%23SyfmonyHackday+created:>2019-11-20');
+            $response = $this->httpClient->request('GET', 'https://api.github.com/search/issues?q=%23SyfmonyHackday+created:>'.$this->fromDate);
             $content = $response->toArray();
 
             $item->expiresAfter(60);

@@ -1,17 +1,39 @@
 body {
-    background-color: #f7f7f7;
+    // background-color: #f7f7f7;
 }
 
-.main-content {
-    background-color: #ffffff;
-    border-radius: 4px;
+.header {
+    background-image: url('https://dvm6cq6s9d8qb.cloudfront.net/com.sfhackday/sfbackground.jpg');
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    @media (min-width: 700px) {
+        background-size: cover;
+    }
+    .container .row {
+        min-height: 40vh;
+    }
 }
+
 .contribution-wrapper {
+    background-color: transparentize(#ffffff, 0.4);
+    border-radius: 4px;
     text-align: center;
     font-size: 1.5rem;
 
     .contribution-count {
         font-size: 5rem;
         display: block;
+    }
+}
+
+.main-content {
+    h1 {
+        color: #223152;
+        font-size: 3rem;
+    }
+
+    h2 {
+        color: #223152;
+        margin-top: 2.5rem;
     }
 }

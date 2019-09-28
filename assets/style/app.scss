@@ -10,12 +10,17 @@ body {
         background-size: cover;
     }
     .container .row {
-        min-height: 40vh;
+        @media (max-height: 1250px) {
+            min-height: 40vh;
+        }
+        @media (min-height: 1251px) {
+            height: 500px;
+        }
     }
 }
 
 .contribution-wrapper {
-    background-color: transparentize(#ffffff, 0.4);
+    background-color: transparentize(#ffffff, 0.3);
     border-radius: 4px;
     text-align: center;
     font-size: 1.5rem;

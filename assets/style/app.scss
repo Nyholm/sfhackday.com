@@ -1,5 +1,5 @@
 body {
-    // background-color: #f7f7f7;
+    font-family: Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
 }
 
 .header {
@@ -29,7 +29,9 @@ body {
 .main-content {
     h1 {
         color: #223152;
-        font-size: 3rem;
+        @media (min-width: 700px) {
+            font-size: 3rem;
+        }
     }
 
     h2 {

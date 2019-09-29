@@ -19,7 +19,7 @@ class Startpage extends AbstractController
     public function index()
     {
         return $this->render('startpage.html.twig', [
-            'contributions' => $this->contributionService->getTotalNumberOfContributions(),
+            'contributions' => $this->contributionService->getNumberOfContributionsToday(),
         ]);
     }
 }

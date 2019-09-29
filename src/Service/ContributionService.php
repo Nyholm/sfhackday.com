@@ -24,14 +24,22 @@ class ContributionService
         $this->fromDate = $fromDate;
     }
 
+    /**
+     * Get the number of contributions since UTC yesterday midnight.
+     * This is not perfect but it will give a good number if the Hackday take place in both Tokyo
+     * and Vancouver.
+     */
     public function getNumberOfContributionsToday(): int
     {
-        $date = new \DateTime('yesterday');
+        $date = new \DateTime('yesterday', 'UTC');
         $date->setTime(0, 0, 0);
 
         return $this->fetchFromApi($date->format('Y-m-d'), 60);
     }
 
+    /**
+     * Get the total number of issues on Github marked with #SymfonyHackday since beginning of time.
+     */
     public function getTotalNumberOfContributions(): int
     {
         return $this->fetchFromApi($this->fromDate, 180);

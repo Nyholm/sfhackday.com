@@ -27,7 +27,7 @@ class ContributionService
     public function getNumberOfContributionsToday(): int
     {
         $date = new \DateTime('yesterday');
-        $date->setTime(0,0,0);
+        $date->setTime(0, 0, 0);
 
         return $this->fetchFromApi($date->format('Y-m-d'), 60);
     }

@@ -11,7 +11,12 @@
             <div class="col-12 col-md-5 col-lg-4 col-xl-4">
                 <div class="my-3 my-md-0 text-center">
                     <div class="contribution-wrapper d-inline-block px-4 py-3">
+                    {% if contributions > 0 %}
                         We have made <span class="contribution-count">{{ contributions }}</span> contributions today
+                    {% else %}
+                        {# No contributions #}
+                        Next Hack Day: <span class="contribution-count">23rd</span> November, Amsterdam
+                    {% endif %}
                     </div>
                 </div>
             </div>

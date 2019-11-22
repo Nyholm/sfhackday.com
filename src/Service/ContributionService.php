@@ -11,7 +11,9 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class ContributionService
 {
+    /** @var HttpClientInterface */
     private $httpClient;
+    /** @var CacheInterface */
     private $cache;
 
     /** @var string YYYY-mm-dd */

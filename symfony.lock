@@ -44,6 +44,9 @@
             "config/packages/nyholm_psr7.yaml"
         ]
     },
+    "php": {
+        "version": "7.3.25"
+    },
     "php-di/invoker": {
         "version": "2.0.0"
     },

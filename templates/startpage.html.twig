@@ -42,11 +42,105 @@
 
             <h2>What should we do?</h2>
             <p>
-                The short answer is: Whatever you want.
+                The short answer is: Whatever you want. If you want to have some
+                inspiration or ideas, see the following focus groups.
+            </p>
+
+            <h4>Documentation</h4>
+            <p>
+                There is a lot of new features in Symfony 5.2 and some of them
+                have not been documented yet. See <a href="https://github.com/symfony/symfony-docs/milestone/23">the issues in the 5.2 milestone</a>
+                to find things to do. When start working with an issue, try to
+                see if the feature requires documentation or if the issue should
+                be closed. You may find the <a href="https://symfony.com/blog/category/living-on-the-edge">Symfony blog posts</a>
+                helpful.
             </p>
 
             <p>
-                This page will be updated shortly.
+                There are also a few features introduced in Symfony 5.1 that are
+                missing documentation. See <a href="https://github.com/symfony/symfony-docs/milestone/23">the issues in the 5.1 milestone</a>.
+                These has been stalled because they don't need documentation or
+                because it may be complicated to write the documentation. For
+                each of these issues and PRs, please write a comment if you think
+                it should be closed or if they should be done. When a few people
+                given their opinion, it will be easier for a maintainer to take a
+                decision.
+            </p>
+
+            <p>
+                Feel free to create a PR for an issue if you want to.
+            </p>
+
+            <h4>Reproduce bugs</h4>
+            <p>
+                One thing that is super helpful for maintainers is reproducing bugs.
+                It is way easier to resolve a bug report with a code example and
+                that is verified by someone.
+            </p>
+
+            <p>
+                Have a look at the <a href="https://github.com/symfony/symfony/issues?q=is%3Aissue+is%3Aopen+label%3ABug">open bug reports</a>,
+                try to understand and reproduce the bugs. Make a comment like
+                "Status: Reviewed" (if you can reproduce) or "Status: Works for me". Also explain what you have tried,
+                maybe add some code example or maybe event a link to a new test repository.
+            </p>
+
+            <p>
+                If the bug was verified and you want to walk the extra mile,
+                you can also try fixing it. Ask in Slack for help.
+            </p>
+
+            <h4>Review open PRs</h4>
+            <p>
+                If you really want a challenge, go through the <a href="https://github.com/symfony/symfony/pulls?page=2&q=is%3Apr+is%3Aopen+label%3A%22Status%3A+Needs+Review%22">open PRs</a>
+                and review them. Make a comment about what you like and what could
+                be improved. Maybe event test the PR to make sure it works. Then try
+                to figure out why the PR is still open.
+            </p>
+            <ul>
+                <li>Does it need a decision for the Core Team?</li>
+                <li>Does it need more work? If the PR has been stalled for a long time, maybe you want to finish it?</li>
+                <li>If it is not clear why it is stalled, make sure to submit a Github review with "Approve" or "Request changes"</li>
+            </ul>
+
+            <p>How to checkout someone else's PR?</p>
+            <p>After <a href="https://symfony.com/doc/current/contributing/code/pull_requests.html#step-2-setup-your-environment">setting up</a> Symfony on your PC. You can use the following git commands to checkout a PR (in this case number 38920) locally:</p>
+            <code><pre>
+git fetch upstream pull/38920/head:pr-38920
+git checkout pr-38920
+            </pre></code>
+
+            <p>See <a href="https://symfony.com/doc/current/contributing/community/reviews.html">Community Reviews</a> for more information.</p>
+
+            <h4>Tell us about testing</h4>
+            <p>
+                TODO
+            </p>
+            <h4>Write a blog post</h4>
+            <p>
+                An absolutely awesome way to contribute to Symfony is to write a
+                blog post where you share an idea or describe how you solved a problem.
+                Even if a problem is very specific, it will still be helpful for
+                some people.
+            </p>
+            <p>
+                Blog posts differs from the Symfony documentation because they can
+                be opinionated. There are sometimes more than one way to solve a
+                problem and none is "the best". The documentation is also very restrictive
+                what libraries to recommend.
+            </p>
+            <p>
+                If you write a blog post, make sure to share it in the #posts channel
+                on Symfony slack and any other social media.
+                This will increase your reads and maybe even make it a featured
+                in "A Week of Symfony".
+            </p>
+
+            <h4>Something else</h4>
+            <p>
+                Work on your own project or a pull request of your choosing. Ask
+                for help or discussion on slack now when there are a lot of people
+                active.
             </p>
 
             <h2>Make it count</h2>

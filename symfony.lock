@@ -11,6 +11,9 @@
     "bref/bref": {
         "version": "0.5.6"
     },
+    "bref/symfony-bridge": {
+        "version": "dev-master"
+    },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
     },

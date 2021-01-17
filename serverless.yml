@@ -1,12 +1,12 @@
 frameworkVersion: ">=2.19.0 <3.0.0"
 service: sfhackday
-useDotenv: false
+#useDotenv: false
 
 provider:
   name: aws
   region: eu-central-1
   runtime: provided.al2
-  stage: Prod
+  stage: prod
   memorySize: 1792
   deploymentBucket:
     name: nyholm-lambda-applications

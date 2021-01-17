@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca52a74c69e6a38fd0f8b69698d103c6",
+    "content-hash": "4fb7c8a22fa1a57c000cd19ead0a1644",
     "packages": [
         {
             "name": "async-aws/core",
@@ -220,6 +220,69 @@
                 }
             ],
             "time": "2021-01-17T09:54:08+00:00"
+        },
+        {
+            "name": "bref/symfony-bridge",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brefphp/symfony-bridge.git",
+                "reference": "5e2c52417f4e9493d641d53df7e9bcba743ad22e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brefphp/symfony-bridge/zipball/5e2c52417f4e9493d641d53df7e9bcba743ad22e",
+                "reference": "5e2c52417f4e9493d641d53df7e9bcba743ad22e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.3",
+                "symfony/filesystem": "^4.4|^5.0",
+                "symfony/http-kernel": "^4.4|^5.0"
+            },
+            "require-dev": {
+                "mnapoli/hard-mode": "^0.2.0",
+                "phpunit/phpunit": "^8.0",
+                "symfony/config": "^4.4|^5.0",
+                "symfony/dependency-injection": "^4.4|^5.0",
+                "symfony/process": "^4.4|^5.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bref\\SymfonyBridge\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Package that makes Symfony works on AWS Lambda with Bref",
+            "keywords": [
+                "aws",
+                "lambda",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/brefphp/symfony-bridge/issues",
+                "source": "https://github.com/brefphp/symfony-bridge/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Nemo64",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/mnapoli",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-01-17T10:31:25+00:00"
         },
         {
             "name": "hollodotme/fast-cgi-client",
@@ -3904,7 +3967,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "bref/bref": 20
+        "bref/bref": 20,
+        "bref/symfony-bridge": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

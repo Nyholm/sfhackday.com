@@ -1,5 +1,6 @@
 frameworkVersion: ">=2.19.0 <3.0.0"
 service: sfhackday
+useDotenv: false
 
 provider:
   name: aws

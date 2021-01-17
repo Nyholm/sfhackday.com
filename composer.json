@@ -20,7 +20,7 @@
     },
     "config": {
         "platform": {
-            "php": "7.3.25"
+            "php": "8.0"
         },
         "preferred-install": {
             "*": "dist"

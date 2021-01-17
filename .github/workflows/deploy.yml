@@ -29,9 +29,11 @@ jobs:
         run: npm ci
 
       - name: Build assets
-        run:  node_modules/.bin/encore prod
+        run:  node_modules/.bin/encore production
 
       - name: Download dependencies
+        env:
+          APP_ENV: prod
         run: composer install --no-interaction --optimize-autoloader --no-dev --no-scripts
 
       - name: Warm up cache
@@ -40,5 +42,9 @@ jobs:
       - name: Disable .env files
         run: echo "<?php return ['APP_ENV'=>'prod'];" > .env.local.php
 
-      - name: Deploy
+      - name: Sercerless deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: eu-central-1
         run: serverless deploy --stage=prod --force

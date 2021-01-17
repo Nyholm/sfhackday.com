@@ -2,8 +2,6 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - master
     tags:
       - '*'
 
@@ -49,7 +47,7 @@ jobs:
             composer-
 
       - name: Download NPM dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build assets
         run:  node_modules/.bin/encore production

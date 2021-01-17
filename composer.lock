@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4fb7c8a22fa1a57c000cd19ead0a1644",
+    "content-hash": "45c947eb850b047b0c06f14883a93893",
     "packages": [
         {
             "name": "async-aws/core",
@@ -132,16 +132,16 @@
         },
         {
             "name": "bref/bref",
-            "version": "dev-chalk",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Nyholm/bref.git",
-                "reference": "38de39f3cc09472150b5691efc101403b2190ca5"
+                "url": "https://github.com/brefphp/bref.git",
+                "reference": "8f1dc3f4b423c125631ae8cdcd06e14e37cfc28e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nyholm/bref/zipball/38de39f3cc09472150b5691efc101403b2190ca5",
-                "reference": "38de39f3cc09472150b5691efc101403b2190ca5",
+                "url": "https://api.github.com/repos/brefphp/bref/zipball/8f1dc3f4b423c125631ae8cdcd06e14e37cfc28e",
+                "reference": "8f1dc3f4b423c125631ae8cdcd06e14e37cfc28e",
                 "shasum": ""
             },
             "require": {
@@ -177,27 +177,7 @@
                     "Bref\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Bref\\Test\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "@static-analysis",
-                    "@unit-tests",
-                    "@code-style"
-                ],
-                "code-style": [
-                    "vendor/bin/phpcs"
-                ],
-                "static-analysis": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "tests": [
-                    "vendor/bin/phpunit --testsuite small"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -211,15 +191,20 @@
                 "serverless"
             ],
             "support": {
-                "source": "https://github.com/Nyholm/bref/tree/chalk"
+                "issues": "https://github.com/brefphp/bref/issues",
+                "source": "https://github.com/brefphp/bref/tree/1.1.2"
             },
             "funding": [
                 {
-                    "type": "github",
-                    "url": "https://github.com/mnapoli"
+                    "url": "https://bref.sh/#enterprise",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/mnapoli",
+                    "type": "github"
                 }
             ],
-            "time": "2021-01-17T09:54:08+00:00"
+            "time": "2021-01-17T11:29:56+00:00"
         },
         {
             "name": "bref/symfony-bridge",
@@ -3967,7 +3952,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "bref/bref": 20,
         "bref/symfony-bridge": 20
     },
     "prefer-stable": false,

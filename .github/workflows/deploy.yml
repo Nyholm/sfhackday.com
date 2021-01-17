@@ -41,7 +41,7 @@ jobs:
 
       - name: Cache composer dependencies
         uses: actions/cache@v2
-        with:
+        with:server
           path: ${{ steps.composer-cache.outputs.dir }}
           key: composer-${{ runner.os }}-${{ hashFiles('composer.*') }}
           restore-keys: |
@@ -70,4 +70,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: eu-central-1
-        run: echo "hello"
+        run: node_modules/.bin/serverless deploy --stage=prod --force

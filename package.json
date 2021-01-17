@@ -1,12 +1,13 @@
 {
     "devDependencies": {
-        "@symfony/webpack-encore": "^0.28.0",
-        "autoprefixer": "^9.6.1",
-        "core-js": "^3.0.0",
-        "postcss-loader": "^3.0.0",
-        "regenerator-runtime": "^0.13.2",
-        "serverless-domain-manager": "^3.3.0",
-        "webpack-notifier": "^1.6.0"
+        "@symfony/webpack-encore": "^0.33.0",
+        "autoprefixer": "^9.7.6",
+        "core-js": "^3.8.1",
+        "cssnano": "^4.1.10",
+        "postcss-loader": "^4.1.0",
+        "regenerator-runtime": "^0.13.7",
+        "serverless": "^2.19.0",
+        "serverless-domain-manager": "^4.2.3"
     },
     "license": "UNLICENSED",
     "private": true,
@@ -28,5 +29,5 @@
         "last 2 versions",
         "Firefox ESR",
         "not dead"
-      ]
+    ]
 }

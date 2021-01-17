@@ -1,7 +1,4 @@
 {
-    "async-aws/cloud-formation": {
-        "version": "1.0.1"
-    },
     "async-aws/core": {
         "version": "1.6.0"
     },

@@ -1,0 +1,44 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+
+jobs:
+  phpstan:
+    name: PHPStan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@2.9.0
+        with:
+          php-version: 8.0
+          coverage: none
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15'
+
+      - name: Download NPM dependencies
+        run: npm ci
+
+      - name: Build assets
+        run:  node_modules/.bin/encore prod
+
+      - name: Download dependencies
+        run: composer install --no-interaction --optimize-autoloader --no-dev --no-scripts
+
+      - name: Warm up cache
+        run: bin/console cache:warmup --env=prod
+
+      - name: Disable .env files
+        run: echo "<?php return ['APP_ENV'=>'prod'];" > .env.local.php
+
+      - name: Deploy
+        run: serverless deploy --stage=prod --force

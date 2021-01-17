@@ -63,7 +63,14 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
-    .enablePostCssLoader()
+    .enablePostCssLoader((options) => {
+        options.postcssOptions = {
+            plugins: [
+                require('autoprefixer'),
+                require('cssnano')
+            ]
+        };
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();

@@ -1,9 +1,10 @@
+frameworkVersion: ">=2.19.0 <3.0.0"
 service: sfhackday
 
 provider:
   name: aws
   region: eu-central-1
-  runtime: provided
+  runtime: provided.al2
   stage: Prod
   memorySize: 1792
   deploymentBucket:
@@ -29,12 +30,12 @@ custom:
 functions:
   website:
     handler: public/index.php
-    timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
+    timeout: 20
     layers:
-      - ${bref:layer.php-73-fpm}
+      - ${bref:layer.php-80-fpm}
     events:
       -   http: 'GET /'
-#      -   http: 'ANY /{proxy+}'
+      -   http: 'ANY /{proxy+}'
 
 
 # Exclude files from deployment

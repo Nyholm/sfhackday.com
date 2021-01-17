@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75ec282842ca6414a0214305a87ec4cc",
+    "content-hash": "ca52a74c69e6a38fd0f8b69698d103c6",
     "packages": [
         {
             "name": "async-aws/core",
@@ -132,16 +132,16 @@
         },
         {
             "name": "bref/bref",
-            "version": "1.1.1",
+            "version": "dev-chalk",
             "source": {
                 "type": "git",
-                "url": "https://github.com/brefphp/bref.git",
-                "reference": "f813801fa16810d52099facacd08be1b68d2e999"
+                "url": "https://github.com/Nyholm/bref.git",
+                "reference": "38de39f3cc09472150b5691efc101403b2190ca5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brefphp/bref/zipball/f813801fa16810d52099facacd08be1b68d2e999",
-                "reference": "f813801fa16810d52099facacd08be1b68d2e999",
+                "url": "https://api.github.com/repos/Nyholm/bref/zipball/38de39f3cc09472150b5691efc101403b2190ca5",
+                "reference": "38de39f3cc09472150b5691efc101403b2190ca5",
                 "shasum": ""
             },
             "require": {
@@ -177,7 +177,27 @@
                     "Bref\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Bref\\Test\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "@static-analysis",
+                    "@unit-tests",
+                    "@code-style"
+                ],
+                "code-style": [
+                    "vendor/bin/phpcs"
+                ],
+                "static-analysis": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "tests": [
+                    "vendor/bin/phpunit --testsuite small"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -191,20 +211,15 @@
                 "serverless"
             ],
             "support": {
-                "issues": "https://github.com/brefphp/bref/issues",
-                "source": "https://github.com/brefphp/bref/tree/1.1.1"
+                "source": "https://github.com/Nyholm/bref/tree/chalk"
             },
             "funding": [
                 {
-                    "url": "https://bref.sh/#enterprise",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/mnapoli",
-                    "type": "github"
+                    "type": "github",
+                    "url": "https://github.com/mnapoli"
                 }
             ],
-            "time": "2021-01-15T14:28:25+00:00"
+            "time": "2021-01-17T09:54:08+00:00"
         },
         {
             "name": "hollodotme/fast-cgi-client",
@@ -3888,7 +3903,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "bref/bref": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

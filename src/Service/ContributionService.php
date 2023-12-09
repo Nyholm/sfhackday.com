@@ -51,7 +51,7 @@ class ContributionService
     {
         return $this->cache->get(sha1('total_contributions_'.$fromDate), function (ItemInterface $item) use ($fromDate, $cacheLifetime) {
             /** @var ResponseInterface $response */
-            $response = $this->httpClient->request('GET', 'https://api.github.com/search/issues?q=%23SymfonyHackday+created:>'.$fromDate);
+            $response = $this->httpClient->request('GET', 'https://api.github.com/search/issues?q=%23SymfonyHackday+updated:>='.$fromDate);
             $content = $response->toArray();
 
             $item->expiresAfter($cacheLifetime);

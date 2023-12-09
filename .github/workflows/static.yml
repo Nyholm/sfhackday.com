@@ -3,20 +3,43 @@ name: Static analysis
 jobs:
   phpstan:
     name: PHPStan
-    runs-on: Ubuntu-20.04
+    runs-on: ubuntu-20.04
+
     steps:
-      - uses: actions/checkout@master
-      - name: PHPStan
-        uses: docker://oskarstark/phpstan-ga
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          args: analyze --no-progress
+          php-version: 8.1
+          extensions: apcu, redis
+          coverage: none
+          tools: phpstan:1.10, cs2pr
+
+      - name: Download dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: PHPStan
+        run: phpstan analyze --no-progress --error-format=checkstyle | cs2pr
 
   php-cs-fixer:
     name: PHP-CS-Fixer
-    runs-on: Ubuntu-20.04
+    runs-on: ubuntu-20.04
+
     steps:
-      - uses: actions/checkout@master
-      - name: PHP-CS-Fixer
-        uses: docker://oskarstark/php-cs-fixer-ga
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          args: --dry-run --diff-format udiff
+          php-version: 8.1
+          coverage: none
+          tools: php-cs-fixer:3.21, cs2pr
+
+      - name: Display PHP-CS-Fixer version
+        run: php-cs-fixer --version
+
+      - name: PHP-CS-Fixer
+        run: php-cs-fixer fix --dry-run --format=checkstyle | cs2pr
